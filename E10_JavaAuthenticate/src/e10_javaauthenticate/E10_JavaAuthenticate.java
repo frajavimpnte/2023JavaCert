@@ -5,6 +5,7 @@
 package e10_javaauthenticate;
 
 import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -13,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  * @author famontecillo
  */
 public class E10_JavaAuthenticate {
-
+    private static final Logger LOGGER = System.getLogger("MD5");
     /**
      * @param args the command line arguments
      */
@@ -41,7 +42,7 @@ public class E10_JavaAuthenticate {
             }
             return sb.toString();
         } catch (NoSuchAlgorithmException Ex) {
-            //Logger.getLogger("MD5").
+            LOGGER.log(Level.ERROR, "myERROR: " + Ex.getMessage());
             return null;
         }
     }
